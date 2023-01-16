@@ -11,7 +11,7 @@ The report structure should include five sections.  see below
 
 
 
-```{r include=FALSE,echo=FALSE}
+```{r include=FALSE}
 require(tigerstats)
 require(tidyverse)
 mydata <- read.csv(file="pushups.csv")
@@ -40,6 +40,18 @@ $H_A$: The average number of pushups done by line players is statistically diffe
 ### Graphical Descriptive Results
 
 <!--Graphical results here. Make sure to show your code. Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too. Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+basicCN <- ggplot(mydata,aes(x=position,y=pushups))
+```
+## Now add in boxplot
+
+```{r}
+basicCN + geom_boxplot()
+```
+  
+It looks like a significant difference because Q3 of line is lower than Q1 of skill.
+
 
 ### Numerical Descriptive Results
 
